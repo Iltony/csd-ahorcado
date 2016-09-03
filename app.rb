@@ -14,9 +14,9 @@ end
 post '/ingresarLetra' do
 	if (@@ahorcado.validar(params[:palabra]))
 		@palabra = params[:palabra]
-		@gano = "GANO!"
+		@gano = "GANÓ!"
 	else
-		@gano = "PERDIO!"
+		@gano = "PERDIÓ!"
 	end
 	
 	erb :index
