@@ -1,18 +1,17 @@
 Feature: Validacion de UI
 
-Scenario: "Cuando inicia se muestra -"
-	When inicia
-	Then dice "-"
+Scenario: "Cuando inicia se muestra ----"
+	When inicia aplicacion en modo prueba con palabra Yate
+	Then dice "----"
 
-Scenario: "Cuando pulsa y muestra GANO!"
-	Given inicia
-		And palabra correcta es "Yate"
+Scenario: "Cuando ingresa Yate muestra GANO!"
+	Given inicia aplicacion en modo prueba con palabra Yate
 	When cargo campo con "Yate"
 	When pulsa boton
 	Then dice "GANO!"
 	
 Scenario: "Cuando pulsa y falla"
-	Given inicia
+	Given inicia aplicacion en modo prueba con palabra Yate
 	When cargo campo con "z"
 	When pulsa boton
 	Then dice "PERDIO!"

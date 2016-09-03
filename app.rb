@@ -1,20 +1,21 @@
 require 'sinatra'
 require './lib/ahorcado'
 
-@@palabraCorrecta = "A"
 get '/' do
-	@palabra = "-"
+	@@ahorcado = Ahorcado.new
+	
+		@palabra = ""
+		@@ahorcado.definirPalabra "Yate"
+	
+	@@ahorcado.palabraCorrecta.length.times do @palabra = @palabra + "-" end
 	erb :index
 end
 
 post '/ingresarLetra' do
-	ahorcado = Ahorcado.new
-	
-	if (ahorcado.validar(params[:letra]))
-		@palabra = "y"
+	if (@@ahorcado.validar(params[:palabra]))
+		@palabra = params[:palabra]
 		@gano = "GANO!"
 	else
-		@palabra = "-"
 		@gano = "PERDIO!"
 	end
 	
