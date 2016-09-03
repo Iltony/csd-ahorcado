@@ -1,0 +1,1 @@
+class Ahorcado end
