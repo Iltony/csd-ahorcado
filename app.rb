@@ -18,7 +18,7 @@ post '/ingresarLetra' do
 	if (@@ahorcado.validar(params[:palabra]))
 		@palabra = params[:palabra]
 		@gano = "GANÓ!"
-	else
+	elsif (@@ahorcado.perdio == true)
 		@gano = "PERDIÓ!"
 	end
 	
