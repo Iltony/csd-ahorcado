@@ -1,0 +1,14 @@
+<html>
+	<body>
+		<h1>"Bienvenido al ahorcado!"</h1>
+
+	    <form method="POST"  action="ingresarLetra">
+        	<input type="text" name="letra">
+        	<input type="submit" value="dale">
+	    </form>
+	Params> <%= params[:letra] %>
+		
+		<h1><%= @palabra %></h1>
+		<h1><%= @gano %></h1>
+	</body>
+</html>

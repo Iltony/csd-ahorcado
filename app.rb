@@ -7,13 +7,12 @@ get '/' do
 	erb :index
 end
 
-get '/ingresarLetra' do
-	
-	#if(params[:letra]=="y")
+post '/ingresarLetra' do
+	if (params[:letra]=='y')
 		@palabra = "y"
 		@gano = "GANO!"
 	#else
 		#@palabra = "y"
-	#end
+	end
 	erb :index
 end
