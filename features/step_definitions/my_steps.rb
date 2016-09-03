@@ -17,3 +17,8 @@ end
 Then(/^dice "(.*?)"$/) do |text|
   last_response.body.should =~ /#{text}/m
 end
+
+Then(/^puntaje es (\d+)$/) do |text|
+  last_response.body.should =~ /#{text}/m
+end
+

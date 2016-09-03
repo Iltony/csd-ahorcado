@@ -16,3 +16,6 @@ Scenario: "Cuando pulsa y falla"
 	When pulsa boton
 	Then dice "PERDIÓ"
 	
+Scenario: "Cuando inicia puntaje es 5
+	When inicia
+	Then puntaje es 5

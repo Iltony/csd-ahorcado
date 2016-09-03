@@ -1,15 +1,18 @@
 require 'sinatra'
 require './lib/ahorcado'
 
-@@palabraCorrecta = "A"
 get '/' do
+
+
 	@palabra = "-"
+	@puntaje = "5"
 	erb :index
 end
 
 post '/ingresarLetra' do
+
 	ahorcado = Ahorcado.new
-	
+
 	if (ahorcado.validar(params[:letra]))
 		@palabra = "y"
 		@gano = "GANÓ"
@@ -18,5 +21,6 @@ post '/ingresarLetra' do
 		@gano = "PERDIÓ"
 	end
 	
+	@puntaje = ahorcado.puntaje
 	erb :index
 end
