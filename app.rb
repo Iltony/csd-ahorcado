@@ -8,11 +8,21 @@ get '/' do
 end
 
 post '/ingresarLetra' do
-	if (params[:letra]=='y')
+
+	ahorcado = Ahorcado.new
+	
+	if (ahorcado.validar(params[:letra]))
 		@palabra = "y"
 		@gano = "GANO!"
 	#else
 		#@palabra = "y"
 	end
+	
+	#if (params[:letra]=='y')
+	#	@palabra = "y"
+	#	@gano = "GANO!"
+	#else
+		#@palabra = "y"
+	#end
 	erb :index
 end
