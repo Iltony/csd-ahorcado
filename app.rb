@@ -3,10 +3,8 @@ require './lib/ahorcado'
 
 get '/' do
 	@@ahorcado = Ahorcado.new
-	
-		@palabra = ""
-		@@ahorcado.definirPalabra "Yate"
-	
+	@palabra = ""
+	@@ahorcado.definirPalabra "Yate"
 	@@ahorcado.palabraCorrecta.length.times do @palabra = @palabra + "-" end
 	erb :index
 end
