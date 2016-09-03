@@ -1,6 +1,7 @@
 class Ahorcado 
 	
 	def initialize
+		#TODO: Generar palabra random
 		@palabraCorrecta = "y"
 		@puntos = 5
     	end
@@ -19,4 +20,11 @@ class Ahorcado
 		@puntos
     	end
 
+	def definirPalabra(palabra)
+		@palabraCorrecta = "Yate"
+	end
+
+	def palabraCorrecta
+		@palabraCorrecta
+	end
 end

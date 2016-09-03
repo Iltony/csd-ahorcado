@@ -3,24 +3,25 @@ require './lib/ahorcado'
 
 get '/' do
 
+	@@ahorcado = Ahorcado.new
+	@palabra = ""
+	@@ahorcado.definirPalabra "Yate"
+	@@ahorcado.palabraCorrecta.length.times do @palabra = @palabra + "-" end
+	@puntaje = @@ahorcado.puntaje
 
-	@palabra = "-"
-	@puntaje = "5"
 	erb :index
 end
 
 post '/ingresarLetra' do
 
-	ahorcado = Ahorcado.new
 
-	if (ahorcado.validar(params[:letra]))
-		@palabra = "y"
-		@gano = "GANÓ"
+	if (@@ahorcado.validar(params[:palabra]))
+		@palabra = params[:palabra]
+		@gano = "GANÓ!"
 	else
-		@palabra = "-"
-		@gano = "PERDIÓ"
+		@gano = "PERDIÓ!"
 	end
 	
-	@puntaje = ahorcado.puntaje
+	@puntaje = @@ahorcado.puntaje
 	erb :index
 end
