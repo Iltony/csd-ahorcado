@@ -12,10 +12,10 @@ post '/ingresarLetra' do
 	
 	if (ahorcado.validar(params[:letra]))
 		@palabra = "y"
-		@gano = "GANO!"
+		@gano = "GANÓ"
 	else
 		@palabra = "-"
-		@gano = "PERDIO!"
+		@gano = "PERDIÓ"
 	end
 	
 	erb :index
