@@ -8,21 +8,15 @@ get '/' do
 end
 
 post '/ingresarLetra' do
-
 	ahorcado = Ahorcado.new
 	
 	if (ahorcado.validar(params[:letra]))
 		@palabra = "y"
 		@gano = "GANO!"
-	#else
-		#@palabra = "y"
+	else
+		@palabra = "-"
+		@gano = "PERDIO!"
 	end
 	
-	#if (params[:letra]=='y')
-	#	@palabra = "y"
-	#	@gano = "GANO!"
-	#else
-		#@palabra = "y"
-	#end
 	erb :index
 end

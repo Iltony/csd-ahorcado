@@ -10,3 +10,9 @@ Scenario: "Cuando pulsa y muestra GANO!"
 	When pulsa boton
 	Then dice "GANO!"
 	
+Scenario: "Cuando pulsa y falla"
+	Given inicia
+	When cargo campo con "z"
+	When pulsa boton
+	Then dice "PERDIO!"
+	
