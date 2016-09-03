@@ -12,4 +12,12 @@ describe 'Ahorcado' do
 		expect(result).to be == true
 	end
 
+	it 'Si NO ingresa y devuelve false' do
+		ahorcado = Ahorcado.new
+		
+		result = ahorcado.validar("x")
+
+		expect(result).to be == false
+	end
+
 end
