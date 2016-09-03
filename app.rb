@@ -9,10 +9,11 @@ end
 
 post '/ingresarLetra' do
 	if (params[:letra]=='y')
-		@palabra = "y"
+		@palabra = params[:letra]
 		@gano = "GANO!"
-	#else
-		#@palabra = "y"
+	else
+		@palabra = "-"
+		@gano = "PERDIO!"
 	end
 	erb :index
 end
