@@ -6,7 +6,8 @@ Scenario: "Cuando inicia se muestra -"
 
 Scenario: "Cuando pulsa y muestra GANO!"
 	Given inicia
-	When cargo campo con "y"
+		And palabra correcta es "Yate"
+	When cargo campo con "Yate"
 	When pulsa boton
 	Then dice "GANO!"
 	
